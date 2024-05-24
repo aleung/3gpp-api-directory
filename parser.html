@@ -92,7 +92,7 @@ a.minibutton:active {background-color: rgb(230, 235, 241); background-image: lin
       '<a href=\"http://www.3gpp.org/DynaReport/29-series.htm\">3GPP site</a> ' +
       'as part of the official 3GPP Technical Specifications.</p>' +
       '<p>© 2019, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.</p><p></p>' +
-      '<p>The links below will open the Swagger Editor or Swagger UI tools, and auto-load the OpenAPI YAML file of each Network Function (NF) API.</p>' +
+      '<p>The links below will open the API viewer, and auto-load the OpenAPI YAML file of each Network Function (NF) API.</p>' +
       '<p>The "Parse" button, next to each API, executes a real time validation of the API and its dependencies ' +
       'by invoking the <a href=\"https://github.com/APIDevTools/swagger-parser\">APIDevTools</a> Swagger Parser/Validator.</p>' +
       '<a href=\"javascript:parse()\" id=\"buttStart\" class=\"button\">Parse all APIs</a><br/>';
@@ -108,10 +108,10 @@ a.minibutton:active {background-color: rgb(230, 235, 241); background-image: lin
   function writeListItem(i, t, y) {
     document.body.innerHTML += '<li><a href=\"javascript:parse(' + i + ')\" id=\"buttonp' + i +
     '\" class=\"minibutton\">Parse</a> <a href=\"javascript:lint(' + i + ')\" id=\"buttonl' + i +
-    '\" class=\"minibutton\">Lint</a> ' + t + ' ' +
-    '<a href=\"https://jdegre.github.io/editor/?url=' + y +'\">(Swagger Editor)</a> ' +
-    '<a href=\"https://petstore.swagger.io/?url=' + y + '\">(Swagger UI)</a> ' +
-    '<a href=\"https://redocly.github.io/redoc/?url=' + y + '\">(Redoc)</a> ' +
+    '\" class=\"minibutton\">Lint</a> ' + t + `
+    <a href="https://redocly.github.io/redoc/?url=${y}" target="_blank">(Redoc)</a>
+    <a href="https://petstore.swagger.io/?url=${y}" target="_blank">(Swagger UI)</a>
+    ` +
     '<div id=\"result' + i +
     '\" class=\"result\"></div><br/><div class=\"lint text\" id=\"textarea' + i +
     '\"></div></li>';
